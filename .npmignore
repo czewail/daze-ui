@@ -3,6 +3,9 @@
 node_modules
 package-lock.json
 site
+src
+flow
+config
 
 # misc
 .DS_Store

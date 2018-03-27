@@ -4,7 +4,6 @@ import './styles/fonts/font-awesome-4.7.0/less/font-awesome.less'
 // grid
 export Row from './components/Row'
 export Col from './components/Col'
-
 export Icon from './components/Icon'
 export Button from './components/Button'
 export Container from './components/Container'

@@ -1,10 +1,29 @@
+const fs = require('fs')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
+
+const pkgPath = path.join(path.resolve(__dirname, '../../'), 'package.json')
+
+const pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {}
 
 const ROOT_PATH = path.resolve(__dirname)
 const APP_PATH = path.resolve(ROOT_PATH, '../src') // __dirname 中的src目录，以此类推
 const APP_FILE = path.resolve(APP_PATH, 'index.js') // 根目录文件app.jsx地址
 const BUILD_PATH = path.resolve(ROOT_PATH, '../dist') // 发布文件所存放的目录
+
+let theme = {}
+if (pkg.theme && typeof (pkg.theme) === 'string') {
+  let cfgPath = pkg.theme
+  // relative path
+  if (cfgPath.charAt(0) === '.') {
+    cfgPath = path.resolve('../../', cfgPath)
+  }
+  const getThemeConfig = require(cfgPath)
+  theme = getThemeConfig()
+} else if (pkg.theme && typeof (pkg.theme) === 'object') {
+  /* eslint prefer-destructuring: 0 */
+  theme = pkg.theme
+}
 
 module.exports = {
   mode: 'production',
@@ -58,7 +77,7 @@ module.exports = {
               ],
             },
           },
-          'less-loader',
+          `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`,
         ],
       },
       {
