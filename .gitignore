@@ -4,3 +4,4 @@
 /.vscode
 /.idea
 /flow-typed
+/site/dist
