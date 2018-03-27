@@ -1,0 +1,149 @@
+// css前缀
+@prefix: daze-;
+
+// 屏幕大小尺寸
+@screen-xs: 480px;
+@screen-xs-min: @screen-xs;
+@screen-xs-max: (@screen-xs - 1);
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+@screen-sm-max: (@screen-sm - 1);
+@screen-md: 992px;
+@screen-md-min: @screen-md;
+@screen-md-max: (@screen-md - 1);
+@screen-lg: 1200px;
+@screen-lg-min: @screen-lg;
+@screen-lg-max: (@screen-lg - 1);
+
+// 填充宽度
+@gutter-width: 30px;
+
+// 颜色亮度调节参数
+@mix-percentage-dark: 80%;
+@mix-percentage-darker: 60%;
+@mix-percentage-light: 80%;
+@mix-percentage-lighter: 20%;
+
+/* ===========颜色-start================== */
+
+// 黑白色
+@color-white: #fff;
+@color-black: #000;
+
+// 基础色
+@color-master: #626262;
+
+// 亮基础色
+@color-master-light: mix(@color-master, @color-white, 16%);
+@color-master-lighter: mix(@color-master, @color-white, 9.5%);
+@color-master-lightest: mix(@color-master, @color-white, 3%);
+
+// 暗基础色
+@color-master-dark: mix(@color-master, @color-black, 45%);
+@color-master-darker: mix(@color-master, @color-black, 27%);
+@color-master-darkest: mix(@color-master, @color-black, 18%);
+
+// 彩色
+@color-success: #10cfbd;
+@color-complete: #48b0f7;
+@color-primary: #6d5cae;
+@color-warning: #f8d053;
+@color-danger: #f55753;
+@color-info: #3b4752;
+
+// 亮彩色
+@color-success-light: mix(@color-success, @color-white, @mix-percentage-light);
+@color-success-lighter: mix(@color-success, @color-white, @mix-percentage-lighter);
+@color-complete-light: mix(@color-complete, @color-white, @mix-percentage-light);
+@color-complete-lighter: mix(@color-complete, @color-white, @mix-percentage-lighter);
+@color-primary-light: mix(@color-primary, @color-white, @mix-percentage-light);
+@color-primary-lighter: mix(@color-primary, @color-white, @mix-percentage-lighter);
+@color-warning-light: mix(@color-warning, @color-white, @mix-percentage-light);
+@color-warning-lighter: mix(@color-warning, @color-white, @mix-percentage-lighter);
+@color-danger-light: mix(@color-danger, @color-white, @mix-percentage-light);
+@color-danger-lighter: mix(@color-danger, @color-white, @mix-percentage-lighter);
+@color-info-light: mix(@color-info, @color-white, @mix-percentage-light);
+@color-info-lighter: mix(@color-info, @color-white, @mix-percentage-lighter);
+
+// 暗彩色
+@color-success-dark: mix(@color-success, @color-black, @mix-percentage-dark);
+@color-success-darker: mix(@color-success, @color-black, @mix-percentage-darker);
+@color-complete-dark: mix(@color-complete, @color-black, @mix-percentage-dark);
+@color-complete-darker: mix(@color-complete, @color-black, @mix-percentage-darker);
+@color-primary-dark: mix(@color-primary, @color-black, @mix-percentage-dark);
+@color-primary-darker: mix(@color-primary, @color-black, @mix-percentage-darker);
+@color-warning-dark: mix(@color-warning, @color-black, @mix-percentage-dark);
+@color-warning-darker: mix(@color-warning, @color-black, @mix-percentage-darker);
+@color-danger-dark: mix(@color-danger, @color-black, @mix-percentage-dark);
+@color-danger-darker: mix(@color-danger, @color-black, @mix-percentage-darker);
+@color-info-dark: mix(@color-info, @color-black, @mix-percentage-dark);
+@color-info-darker: mix(@color-info, @color-black, @mix-percentage-darker);
+
+/* ===========颜色-end================== */
+
+// 组件padding
+@padding-base-vertical: 6px;
+@padding-base-horizontal: 17px;
+@padding-lg-vertical: 10px;
+@padding-lg-horizontal: 28px;
+@padding-sm-vertical: 4px;
+@padding-sm-horizontal: 16px;
+@padding-xs-vertical: 2px;
+@padding-xs-horizontal: 8px;
+
+// 组件size
+@size-base: ceil(@padding-base-vertical * 2 + @font-size-base * @line-height-small + 2);
+@size-lg: ceil(@padding-lg-vertical * 2 + @font-size-lg * @line-height-large + 2);
+@size-sm: ceil(@padding-sm-vertical * 2 + @font-size-sm * @line-height-small + 2);
+@size-xs: ceil(@padding-xs-vertical * 2 + @font-size-xs * @line-height-small + 2);
+
+// 字体尺寸
+@font-size-base: 14px;
+@font-size-lg: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-sm: ceil((@font-size-base * 0.85)); // ~12px
+@font-size-xs: ceil((@font-size-base * 0.7)); // ~10px
+@font-size-h1: floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2: floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3: ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5: @font-size-base;
+@font-size-h6: ceil((@font-size-base * 0.85)); // ~12px
+
+// 圆角尺寸
+@border-radius-base: 4px;
+@border-radius-large: 6px;
+@border-radius-small: 3px;
+
+// 行高尺寸
+@line-height-large: 1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-base: 1.428571429;
+@line-height-small: 1.5;
+@line-height-computed: floor((@font-size-base * @line-height-base));
+
+// z-index scale
+@zIndex-1:   100;
+@zIndex-2:   200;
+@zIndex-3:   300;
+@zIndex-4:   400;
+@zIndex-5:   500;
+@zIndex-6:   600;
+@zIndex-7:   700;
+@zIndex-8:   800;
+@zIndex-9:   900;
+@zIndex-10: 1000;
+@zIndex-page-1: 9100;
+@zIndex-page-2: 9200;
+@zIndex-page-3: 9300;
+@zIndex-page-4: 9400;
+@zIndex-page-5: 9500;
+@zIndex-page-6: 9600;
+@zIndex-page-7: 9700;
+@zIndex-page-8: 9800;
+@zIndex-page-9: 9900;
+
+// 栅格系统
+@grid-columns           : 24;
+@grid-gutter-width      : 0;
+
+// form
+@input-border-color: fade(@color-black, 10%);;

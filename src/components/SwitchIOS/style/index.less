@@ -1,0 +1,159 @@
+@import "../../../styles/index";
+
+.@{prefix}switchIOS {
+  input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  input[type=checkbox]:checked {
+    & + .@{prefix}switchIOS__display {
+      background-color: mix(@color-master, #fff, 47%);
+      border-color: mix(@color-master, #fff, 47%);
+      box-shadow: mix(@color-master, #fff, 47%) 0px 0px 0px 16px inset;
+      transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+
+      & > small.@{prefix}switchIOS__inner {
+        left: 20px;
+      }
+    }
+  }
+  input[type=checkbox][disabled] {
+      & + .@{prefix}switchIOS__display {
+          opacity: 0.5;
+      }
+  }
+
+  &__display {
+    transition: border 0.4s, box-shadow 0.4s;
+    background-color: @color-white;
+    border: 1px solid mix(@color-master, #fff, 17%);
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    vertical-align: middle;
+    width: 50px;
+    user-select: none;
+    box-sizing: content-box;
+    background-clip: content-box;
+  }
+  &__inner {
+    transition: left 0.3s;
+    background: @color-white;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px mix(@color-master, #fff, 47%);
+    height: 30px;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    left: 0;
+  }
+  &.@{prefix}switchIOS-xs {
+    .@{prefix}switchIOS__display {
+      height: 18px;
+      width: 30px;
+    }
+    .@{prefix}switchIOS__inner {
+      width: 18px;
+      height: 18px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switchIOS__display {
+        & > small.@{prefix}switchIOS__inner {
+          left: 12px;
+        }
+      }
+    }
+  }
+  &.@{prefix}switchIOS-sm {
+    .@{prefix}switchIOS__display {
+      height: 24px;
+      width: 40px;
+    }
+    .@{prefix}switchIOS__inner {
+      width: 24px;
+      height: 24px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switchIOS__display {
+        & > small.@{prefix}switchIOS__inner {
+          left: 16px;
+        }
+      }
+    }
+  }
+  &.@{prefix}switchIOS-lg {
+    .@{prefix}switchIOS__display {
+      height: 36px;
+      width: 60px;
+    }
+    .@{prefix}switchIOS__inner {
+      width: 36px;
+      height: 36px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switchIOS__display {
+        & > small.@{prefix}switchIOS__inner {
+          left: 24px;
+        }
+      }
+    }
+  }
+
+  &.@{prefix}switchIOS-success {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-success;
+          border-color: @color-success;
+          box-shadow: @color-success 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switchIOS-primary {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-primary;
+          border-color: @color-primary;
+          box-shadow: @color-primary 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switchIOS-warning {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-warning;
+          border-color: @color-warning;
+          box-shadow: @color-warning 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switchIOS-danger {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-danger;
+          border-color: @color-danger;
+          box-shadow: @color-danger 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switchIOS-complete {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-complete;
+          border-color: @color-complete;
+          box-shadow: @color-complete 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switchIOS-info {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switchIOS__display {
+          background-color: @color-info;
+          border-color: @color-info;
+          box-shadow: @color-info 0px 0px 0px 16px inset;
+        }
+    }
+  }
+}

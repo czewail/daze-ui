@@ -1,0 +1,236 @@
+@import "../../../styles/index";
+
+.@{prefix}switch {
+  position: relative;
+  font-size: @font-size-base;
+  // line-height: 1;
+  input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  input[type=checkbox]:not(:checked) {
+    & ~ .@{prefix}switch__display .@{prefix}switch__item-checked {
+      display: none;
+    }
+    & ~ .@{prefix}switch__display .@{prefix}switch__item-unchecked {
+      display: inline-block;
+    }
+  }
+  input[type=checkbox]:checked {
+    & + .@{prefix}switch__display {
+      background-color: mix(@color-master, #fff, 77%);
+      border-color: mix(@color-master, #fff, 77%);
+      box-shadow: mix(@color-master, #fff, 77%) 0px 0px 0px 16px inset;
+      transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+
+      & > small.@{prefix}switch__inner {
+        left: 36px;
+      }
+    }
+    & ~ .@{prefix}switch__display .@{prefix}switch__item-checked {
+      display: inline-block;
+    }
+    & ~ .@{prefix}switch__display .@{prefix}switch__item-unchecked {
+      display: none;
+    }
+
+  }
+  input[type=checkbox][disabled] {
+      & + .@{prefix}switch__display {
+          opacity: 0.5;
+      }
+  }
+
+  &__display {
+    transition: border 0.4s, box-shadow 0.4s;
+    background-color: mix(@color-master, #fff, 37%);
+    border: 1px solid mix(@color-master, #fff, 37%);
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    position: relative;
+    vertical-align: middle;
+    width: 60px;
+    user-select: none;
+    box-sizing: content-box;
+    background-clip: content-box;
+  }
+  &__inner {
+    transition: left 0.3s;
+    background: @color-white;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px mix(@color-master, #fff, 47%);
+    height: 23px;
+    position: absolute;
+    top: 1px;
+    width: 23px;
+    left: 1px;
+  }
+
+  &__item-checked {
+    display: inline-block;
+    color: @color-white;
+    position: absolute;
+    z-index: @zIndex-3;
+    left: 10px;
+    top: 1px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__item-unchecked {
+    display: inline-block;
+    color: @color-white;
+    position: absolute;
+    z-index: @zIndex-3;
+    right: 10px;
+    top: 1px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+
+
+  &.@{prefix}switch-xs {
+    font-size: @font-size-xs;
+    .@{prefix}switch__display {
+      height: 15px;
+      width: 36px;
+    }
+    .@{prefix}switch__inner {
+      width: 13px;
+      height: 13px;
+    }
+    .@{prefix}switch__item-checked {
+      height: 15px;
+      line-height: 15px;
+      left: 6px;
+    }
+    .@{prefix}switch__item-unchecked {
+      height: 15px;
+      line-height: 15px;
+      right: 6px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switch__display {
+        & > small.@{prefix}switch__inner {
+          left: 22px;
+        }
+      }
+    }
+  }
+  &.@{prefix}switch-sm {
+    font-size: @font-size-sm;
+    .@{prefix}switch__display {
+      height: 20px;
+      width: 48px;
+    }
+    .@{prefix}switch__inner {
+      width: 18px;
+      height: 18px;
+    }
+    .@{prefix}switch__item-checked {
+      height: 20px;
+      line-height: 20px;
+      left: 8px;
+    }
+    .@{prefix}switch__item-unchecked {
+      height: 20px;
+      right: 8px;
+      line-height: 20px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switch__display {
+        & > small.@{prefix}switch__inner {
+          left: 29px;
+        }
+      }
+    }
+  }
+  &.@{prefix}switch-lg {
+    font-size: @font-size-lg;
+    .@{prefix}switch__display {
+      height: 30px;
+      width: 72px;
+    }
+    .@{prefix}switch__inner {
+      width: 28px;
+      height: 28px;
+    }
+    .@{prefix}switch__item-checked {
+      height: 30px;
+      line-height: 30px;
+      left: 12px;
+    }
+    .@{prefix}switch__item-unchecked {
+      height: 30px;
+      line-height: 30px;
+      right: 12px;
+    }
+    input[type=checkbox]:checked {
+      & + .@{prefix}switch__display {
+        & > small.@{prefix}switch__inner {
+          left: 43px;
+        }
+      }
+    }
+  }
+
+  &.@{prefix}switch-success {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-success;
+          border-color: @color-success;
+          box-shadow: @color-success 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switch-primary {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-primary;
+          border-color: @color-primary;
+          box-shadow: @color-primary 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switch-warning {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-warning;
+          border-color: @color-warning;
+          box-shadow: @color-warning 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switch-danger {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-danger;
+          border-color: @color-danger;
+          box-shadow: @color-danger 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switch-complete {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-complete;
+          border-color: @color-complete;
+          box-shadow: @color-complete 0px 0px 0px 16px inset;
+        }
+    }
+  }
+  &.@{prefix}switch-info {
+    input[type=checkbox]:checked {
+        & + .@{prefix}switch__display {
+          background-color: @color-info;
+          border-color: @color-info;
+          box-shadow: @color-info 0px 0px 0px 16px inset;
+        }
+    }
+  }
+}

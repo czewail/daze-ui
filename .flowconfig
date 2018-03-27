@@ -1,0 +1,19 @@
+[ignore]
+.*/node_modules/.*
+.*/config/.*
+.*/server/.*
+
+[include]
+
+[libs]
+flow
+
+[lints]
+
+[options]
+module.name_mapper='^@/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+suppress_comment= \\(.\\|\n\\)*\\$flow-disable-line
+module.name_mapper.extension='less' -> '<PROJECT_ROOT>/flow-stubs/css-modules.js'
+module.name_mapper='.*\.\(svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow-stubs/url-loader.js'
+
+[strict]

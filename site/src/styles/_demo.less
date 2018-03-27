@@ -1,0 +1,126 @@
+.demo-box {
+  margin-bottom: 2px;
+  border: solid 1px #eaeefb;
+  transition: 0.6s;
+
+  .demo-source {
+    padding: 20px;
+  }
+
+  .demo-code {
+    background: transparent;
+  }
+
+  .demo-description {
+    padding: 20px;
+    border-top: solid 1px #eaeefb;
+    background-color: #f9fcfa;
+  }
+
+  .demo-control {
+    padding: 10px 20px;
+    border-top: solid 1px #eaeefb;
+    text-align: center;
+    color:#3c93ce;
+    cursor: pointer;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+// icons
+
+.demo-icons-list {
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  border: solid 1px #eaeefb;
+  border-radius: 4px;
+
+  li {
+    float: left;
+    width: 20%;
+    height: 100px;
+    line-height: 100px;
+    color: #515151;
+    font-style: 13px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color:#333;
+      line-height: normal;
+
+      i {
+        color: #333;
+        font-size: 24px;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+
+
+code {
+ font-family: Menlo, Monaco, Consolas, Courier, monospace;
+}
+code {
+   color: #5e6d82;
+   background-color: #efefef;
+   margin: 0 4px;
+   transform: translateY(-2px);
+   display: inline-block;
+   padding: 1px 5px;
+   font-size: 12px;
+   border-radius: 2px;
+ }
+.demo-color-row{
+  display: flex;
+  margin: 20px 0;
+
+  .demo-color-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+
+    .demo-color-demo1 {
+      flex: 1;
+      display: flex;
+      height: 80px;
+      color: white;
+      border-radius: 8px;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .demo-color-demo2 {
+      flex: 1;
+      display: flex;
+      height: 35px;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    //  text-shadow: black 0 1px 0;
+      // margin-bottom: 5px;
+      color: white;
+
+      &.demo-text-grey {
+        color: #333;
+      }
+    }
+  }
+}
+
+.demo-grid-content {
+  min-height: 40px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+}

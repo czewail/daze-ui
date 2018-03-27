@@ -1,0 +1,280 @@
+@import "../../../styles/index";
+@import "./mixin";
+
+.@{prefix}btn {
+  font-size: @font-size-base;
+  font-weight: normal;
+  display: inline-block;
+  background-image: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  border: 1px solid @color-master-lighter;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: @border-radius-small;
+  color: @color-master;
+  background-color:  @color-white ;
+  text-shadow: none;
+  box-shadow: none;
+  line-height: @line-height-small;
+  padding: @padding-base-vertical @padding-base-horizontal;
+  position: relative;
+  transition: color 0.1s linear 0s,background-color 0.1s linear 0s,opacity 0.2s linear 0s !important;
+  vertical-align: middle;
+
+  &:hover{
+      background-color: #fafafa;
+      border: 1px solid fade(@color-master,27%);
+  }
+
+  &.@{prefix}active{
+      border-color: @color-master-light;
+      background: #fff;
+  }
+
+  &:focus,
+  &:active:focus,
+  &.@{prefix}active:focus {
+      outline: none !important;
+      outline-style: none;
+  }
+  .@{prefix}caret {
+      margin-left: 3px;
+      &.@{prefix}single {
+          margin-left: 0;
+      }
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &.@{prefix}active,
+  &.@{prefix}disabled,
+  &[disabled] {
+      box-shadow: none;
+  }
+
+  &.@{prefix}disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    opacity: .65;
+  }
+  a& {
+    &.@{prefix}disabled,
+    fieldset[disabled] & {
+      pointer-events: none;
+    }
+  }
+}
+
+.@{prefix}btn-primary {
+    .button(@color-white, @color-primary, @color-primary);
+    .button-basic(@color-primary);
+}
+.@{prefix}btn-success {
+    .button(@color-white, @color-success, @color-success);
+    .button-basic(@color-success);
+}
+.@{prefix}btn-complete{
+    .button(@color-white, @color-complete, @color-complete);
+    .button-basic(@color-complete);
+}
+.@{prefix}btn-info {
+    .button(@color-white, @color-info, @color-info);
+    .button-basic(@color-info);
+}
+.@{prefix}btn-warning {
+    .button(@color-white, @color-warning, @color-warning);
+    .button-basic(@color-warning);
+}
+.@{prefix}btn-danger {
+    .button(@color-white, @color-danger, @color-danger);
+    .button-basic(@color-danger);
+}
+
+.@{prefix}btn-default, .@{prefix}btn-default:focus{
+    color: #5e5e5e;
+    background-color: @color-white;
+    border-color: @color-master-lighter;
+}
+.@{prefix}btn-default {
+  &.@{prefix}active, &:active, &.@{prefix}active:focus, &:active:focus, &:active:hover{
+    background-color: @color-master-lighter;
+    border-color: @color-master-light;
+    color:@color-master-dark;
+  }
+  &.@{prefix}hover, &:hover{
+    background-color: @color-master-lightest;
+    border-color: fade(@color-master,27%);
+    color: @color-master-darker;
+  }
+  &.@{prefix}active:hover{
+    background: mix(@color-white, #000, 94%) ;
+  }
+  .button-basic(@color-master);
+}
+
+.@{prefix}btn-lg, .@{prefix}btn-group-lg > .@{prefix}btn{
+    padding: @padding-lg-vertical @padding-lg-horizontal;
+    font-size: @font-size-lg;
+    line-height: @line-height-large;
+}
+.@{prefix}btn-sm, .@{prefix}btn-group-sm > .@{prefix}btn{
+    padding: @padding-sm-vertical @padding-sm-horizontal;
+    font-size: @font-size-sm;
+    line-height: @line-height-small;
+}
+.@{prefix}btn-xs, .@{prefix}btn-group-xs > .@{prefix}btn{
+    padding: @padding-xs-vertical @padding-xs-horizontal;
+    font-size: @font-size-xs;
+}
+
+.@{prefix}btn > i:first-child:not(:last-child){
+    margin-right: 5px;
+    font-size: @font-size-base;
+}
+.@{prefix}btn > i:last-child:not(:first-child) {
+  margin-left: 5px;
+  font-size: @font-size-base;
+}
+.@{prefix}btn > .@{prefix}btn-loading {
+  display: inline-block;
+}
+
+.@{prefix}btn-rounded {
+  border-radius: 100px;
+}
+.@{prefix}btn-circle {
+  border-radius: 50%;
+  padding: 0;
+  width: @size-base;
+  height: @size-base;
+  &.@{prefix}btn-lg {
+    width: @size-lg;
+    height: @size-lg;
+  }
+  &.@{prefix}btn-sm {
+    width: @size-sm;
+    height: @size-sm;
+  }
+  &.@{prefix}btn-xs {
+    width: @size-xs;
+    height: @size-xs;
+  }
+}
+
+// 按钮组
+.@{prefix}btn-group,
+.@{prefix}btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  > .@{prefix}btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.@{prefix}active {
+      z-index: 2;
+    }
+  }
+}
+// Prevent double borders when buttons are next to each other
+.@{prefix}btn-group {
+  .@{prefix}btn + .@{prefix}btn,
+  .@{prefix}btn + .@{prefix}btn-group,
+  .@{prefix}btn-group + .@{prefix}btn,
+  .@{prefix}btn-group + .@{prefix}btn-group {
+    margin-left: -1px;
+  }
+}
+.@{prefix}btn-group > .@{prefix}btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.@{prefix}btn-group > .@{prefix}btn:first-child {
+  margin-left: 0;
+  &:not(:last-child) {
+    .border-right-radius(0);
+  }
+}
+.@{prefix}btn-group > .@{prefix}btn:last-child:not(:first-child)
+{
+  .border-left-radius(0);
+}
+.@{prefix}btn-group > .@{prefix}btn-group {
+  float: left;
+}
+.@{prefix}btn-group > .@{prefix}btn-group:not(:first-child):not(:last-child) > .@{prefix}btn {
+  border-radius: 0;
+}
+.@{prefix}btn-group > .@{prefix}btn-group:first-child:not(:last-child) {
+  > .@{prefix}btn:last-child
+  {
+    .border-right-radius(0);
+  }
+}
+.@{prefix}btn-group > .@{prefix}btn-group:last-child:not(:first-child) > .@{prefix}btn:first-child {
+  .border-left-radius(0);
+}
+
+// Block button
+// --------------------------------------------------
+
+.@{prefix}btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.@{prefix}btn-block + .@{prefix}btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.@{prefix}btn-block {
+    width: 100%;
+  }
+}
+
+
+// Link button
+.@{prefix}btn-text{
+    color: #5e5e5e;
+    background-color: transparent;
+    border: none;
+    &:hover, &:focus, &:active, &.@{prefix}active, &.@{prefix}disabled, &[disabled] {
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        outline: none;
+    }
+}
+//File Input Btn
+.@{prefix}btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.@{prefix}btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+

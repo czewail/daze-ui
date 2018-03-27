@@ -1,0 +1,73 @@
+.p-t(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .p-t-@{i} {
+    padding-top: (@i * 1px);
+  }
+  .p-t(@n, (@i + @s), @s);
+}
+.p-b(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .p-b-@{i} {
+    padding-bottom: (@i * 1px);
+  }
+  .p-b(@n, (@i + @s), @s);
+}
+.p-l(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .p-l-@{i} {
+    padding-left: (@i * 1px);
+  }
+  .p-l(@n, (@i + @s), @s);
+}
+.p-r(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .p-r-@{i} {
+    padding-right: (@i * 1px);
+  }
+  .p-r(@n, (@i + @s), @s);
+}
+
+
+.m-t(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .m-t-@{i} {
+    margin-top: (@i * 1px);
+  }
+  .m-t(@n, (@i + @s), @s);
+}
+.m-b(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .m-b-@{i} {
+    margin-bottom: (@i * 1px);
+  }
+  .m-b(@n, (@i + @s), @s);
+}
+.m-l(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .m-l-@{i} {
+    margin-left: (@i * 1px);
+  }
+  .m-l(@n, (@i + @s), @s);
+}
+.m-r(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .m-r-@{i} {
+    margin-right: (@i * 1px);
+  }
+  .m-r(@n, (@i + @s), @s);
+}
+
+.height(@n, @i: 5, @s: 5) when (@i =< @n) {
+  .height-@{i} {
+    height: (@i * 1px);
+  }
+  .height(@n, (@i + @s), @s);
+}
+
+
+
+
+
+// 清除浮动的伪类
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,72 @@
+.button(@text-color; @background-color; @border-color){
+    &,
+    &:focus{
+    color: @text-color;
+    background-color: @background-color;
+    border-color: @background-color;
+  }
+
+  &.active,
+  &:active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover
+  {
+    background-color: mix(@background-color, @color-black, @mix-percentage-dark);
+    border-color: mix(@background-color, @color-black, @mix-percentage-dark);
+    color:@text-color;
+  }
+  &.@{prefix}hover,
+  &:hover,
+  {
+    background-color: mix(@background-color, @color-white, @mix-percentage-light);
+    border-color: mix(@background-color, @color-white, @mix-percentage-light);
+    color: @text-color;
+  }
+    &.active:hover{
+    background: mix(@background-color, #000, 86%) ;
+    border-color: mix(@background-color, #000, 86%) ;
+    }
+
+      &.@{prefix}disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.@{prefix}active {
+          background-color: @background-color;
+              border-color: @border-color;
+        }
+      }
+
+    .@{prefix}badge {
+        color: @background-color;
+        background-color: @text-color;
+    }
+}
+
+.button-basic(@color) {
+  &.@{prefix}btn-basic, .@{prefix}btn-basic:focus{
+      color: @color;
+      background-color: @color-white;
+      border-color: @color;
+  }
+  &.@{prefix}btn-basic {
+    &.@{prefix}active, &:active, &.@{prefix}active:focus, &:active:focus, &:active:hover{
+      // background-color: mix(@color, @color-white, @mix-percentage-lighter);
+      // background-color: @color-master-lighter;
+      border-color: mix(@color, @color-black, @mix-percentage-dark);
+      color:mix(@color, @color-black, @mix-percentage-darker);
+    }
+    &.@{prefix}hover, &:hover{
+      background-color: @color-master-lightest;
+      border-color: mix(@color, @color-white, @mix-percentage-light);
+      color: mix(@color, @color-white, @mix-percentage-light);
+    }
+    &.@{prefix}active:hover{
+      background: mix(@color-white, #000, 94%) ;
+    }
+  }
+}
