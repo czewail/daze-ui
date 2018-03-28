@@ -12,8 +12,7 @@
  * Container
  */
 
-import React from 'react'
-import type { Node, Element } from 'react'
+import * as React from 'react'
 import classNames from 'classnames'
 import { cssPrefix } from '../../constants/config'
 import './style/index.less'
@@ -23,11 +22,11 @@ type PropsType = {
   className?: string,
   style?: Object,
   align?: 'left' | 'center' | 'right',
-  children: Element<any>,
+  children: React.Element<any>,
   [string]: mixed
 };
 
-function Container(props: PropsType): Node {
+function Container(props: PropsType): React.Node {
   const { fluid, className, align, ...restProps } = props
   return (
     <div

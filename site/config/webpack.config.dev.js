@@ -105,11 +105,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'), // 定义编译环境
-      },
-    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
@@ -119,4 +114,5 @@ module.exports = {
       '~components': COMPONENT_PATH,
     },
   },
+  devtool: 'inline-source-map',
 }

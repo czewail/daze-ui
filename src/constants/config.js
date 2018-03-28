@@ -1,2 +1,2 @@
 /* @flow */
-export const cssPrefix : string = 'daze-'
+export const cssPrefix: string = 'daze-'

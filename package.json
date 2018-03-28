@@ -1,8 +1,8 @@
 {
   "name": "daze-ui",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.6",
   "description": "a simple react ui",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "node site/server/server.js",
     "start": "npm run dev",
@@ -11,7 +11,7 @@
     "site-clean": "rimraf site/dist/*",
     "copy": "copyfiles -f ./site/server/index.html ./site/dist",
     "build": "npm run clean && webpack --config config/webpack.config.prod.js",
-    "site-build": "npm run site-clean && npm run copy && webpack --mode production --config site/config/webpack.config.prod.js"
+    "site-build": "npm run site-clean && npm run copy && webpack --config site/config/webpack.config.prod.js"
   },
   "keywords": [],
   "author": "Chan Zewail",

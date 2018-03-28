@@ -1,11 +1,13 @@
 .git
 .flow-typed
+flow-typed
 node_modules
 package-lock.json
 site
 src
 flow
 config
+flow-stubs
 
 # misc
 .DS_Store
