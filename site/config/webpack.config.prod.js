@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 
 const pkgPath = path.join(path.resolve(__dirname, '../../'), 'package.json')
@@ -28,6 +28,7 @@ if (pkg.theme && typeof (pkg.theme) === 'string') {
 }
 
 module.exports = {
+  mode: 'production',
   entry: APP_FILE,
   output: {
     path: BUILD_PATH,
@@ -99,11 +100,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'), // 定义编译环境
-      },
-    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.less', '.scss', '.css'], // 后缀名自动补全
