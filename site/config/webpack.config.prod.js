@@ -50,7 +50,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader?sourceMap',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -69,7 +69,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader?sourceMap',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {

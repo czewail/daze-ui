@@ -11,3 +11,7 @@ export WhiteSpace from './components/WhiteSpace'
 export SideSpace from './components/SideSpace'
 export Switch from './components/Switch'
 export SwitchIOS from './components/SwitchIOS'
+export Layout from './components/Layout'
+export View from './components/View'
+export Menu from './components/Menu'
+

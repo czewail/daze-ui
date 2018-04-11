@@ -65,7 +65,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "core-js": "^2.5.4",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-motion": "^0.5.2"
   }
 }

@@ -33,7 +33,7 @@ function Container(props: PropsType): React.Node {
       className={classNames({
         [`${cssPrefix}container`]: !fluid,
         [`${cssPrefix}container-fluid`]: fluid,
-        [`${cssPrefix}align-${align || ''}`]: align,
+        [`${cssPrefix}container-${align || ''}`]: align,
       }, className)}
       {...restProps}
     >

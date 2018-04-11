@@ -1,0 +1,39 @@
+@import "../../../styles/index";
+
+.@{prefix}layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  background-color: @layout-background;
+  &,
+  * {
+    box-sizing: border-box;
+  }
+  &-sub-layout {
+    flex-direction: row;
+  }
+  &-header, &-footer {
+    flex: 1;
+  }
+  &-header {
+    background: @layout-header-background;
+    padding: @layout-header-padding;
+    height: @layout-header-height;
+    line-height: @layout-header-height;
+  }
+  &-content {
+    flex: auto;
+  }
+  &-footer {
+    background: @layout-footer-background;
+    padding: @layout-footer-padding;
+    color: @text-color;
+    font-size: @font-size-base;
+  }
+  &-sider {
+    transition: all .2s;
+    position: relative;
+    background: @layout-sider-background;
+    min-width: 0; // 修复火狐不能设置宽度小于内容
+  }
+}

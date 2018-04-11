@@ -3,7 +3,7 @@ const path = require('path')
 // const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 
-const pkgPath = path.join(path.resolve(__dirname, '../../'), 'package.json')
+const pkgPath = path.join(path.resolve(__dirname, '../'), 'package.json')
 
 const pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {}
 
@@ -17,7 +17,7 @@ if (pkg.theme && typeof (pkg.theme) === 'string') {
   let cfgPath = pkg.theme
   // relative path
   if (cfgPath.charAt(0) === '.') {
-    cfgPath = path.resolve('../../', cfgPath)
+    cfgPath = path.resolve('../', cfgPath)
   }
   const getThemeConfig = require(cfgPath)
   theme = getThemeConfig()
@@ -34,6 +34,8 @@ module.exports = {
     // 输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
     // “path”仅仅告诉Webpack结果存储在哪里
     filename: 'index.js',
+    libraryTarget: 'umd',
+    // publicPath: 'assets/',
     // 模板、样式、脚本、图片等资源对应的server上的路径
     // “publicPath”项则被许多Webpack的插件用于在生产模式下更新内嵌到css、html文件里的url值。
   },
@@ -101,5 +103,4 @@ module.exports = {
       '@': APP_PATH,
     },
   },
-  // devtool: 'source-map',
 }

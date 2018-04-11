@@ -1,9 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import {
   Route,
 } from 'react-router-dom'
 import pages from '@/pages'
-// import { Container } from '../../../../dist/index'
 
 class Content extends React.Component {
   render() {
@@ -15,7 +14,6 @@ class Content extends React.Component {
 
     return (
       <div className="inner-content full-height">
-        {/* <Container>123</Container> */}
         {
           Object.keys(this.components).map((component, index) => {
             return <Route key={index} path={`/${lang}/${component}`} component={this.components[component]} />

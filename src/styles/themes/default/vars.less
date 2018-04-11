@@ -109,6 +109,16 @@
 @font-size-h5: @font-size-base;
 @font-size-h6: ceil((@font-size-base * 0.85)); // ~12px
 
+// 常用参数
+@body-background: @color-white;
+@head-color-light: fade(@color-black, 65%);
+@head-color: fade(@color-black, 85%);
+@head-color-dark: fade(@color-black, 100%);
+@text-color-light: fade(@color-black, 45%);
+@text-color: fade(@color-black, 65%);
+@text-color-dark: fade(@color-black, 85%);
+
+
 // 圆角尺寸
 @border-radius-base: 4px;
 @border-radius-large: 6px;
@@ -141,9 +151,49 @@
 @zIndex-page-8: 9800;
 @zIndex-page-9: 9900;
 
+// Animation
+// fork from ant-design
+@ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
 // 栅格系统
 @grid-columns           : 24;
 @grid-gutter-width      : 0;
 
-// form
-@input-border-color: fade(@color-black, 10%);;
+// MARK: 组件
+
+// 表单 Form
+@input-border-color: fade(@color-black, 10%);
+
+// 布局 Layout
+@layout-background: #f2f2f2;
+@layout-header-height: 70px;
+@layout-header-padding: 0 50px;
+@layout-header-background: @color-info-darker;
+@layout-footer-background: #f2f2f2;
+@layout-footer-padding: 25px 50px;
+@layout-sider-background: @color-white;
+
+// 菜单 Menu
+// Light Theme
+@menu-item-height: 40px;
+@menu-collapsed-width: 80px;
+@menu-background: @color-white;
+@menu-item-color: @text-color;
+@menu-item-color-highlight: @color-complete;
+@menu-item-active-background: @color-complete-light;
+// Dark Theme
+@menu-background-dark: @color-info;
+@menu-item-color-dark: @text-color-light;
+@menu-item-color-highlight-dark: @color-complete-light;
+@menu-item-active-background-dark: @color-complete;

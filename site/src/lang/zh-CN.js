@@ -10,16 +10,23 @@ export default {
     //
     basic: '基础组件',
     layouts: '布局',
+    navs: '导航',
     forms: '表单',
     // 三级菜单-基础组件
     button: 'Button 按钮',
     container: 'Container 容器',
+    view: 'View 视图',
     'white-space': 'WhiteSpace 上下留白',
     'side-space': 'SideSpace 两侧留白',
     // 三级菜单-表单
     switch: 'Switch 开关',
     switchIOS: 'SwitchIOS 开关(IOS)',
-
+    // 三级菜单-layout
+    grid: 'Grid 栅格',
+    layout: 'Layout 布局',
+    flex: 'Flex 弹性布局',
+    // 三级菜单-导航
+    menu: 'Menu 菜单',
     //
     //
     nav: '导航',
@@ -27,14 +34,8 @@ export default {
     notice: '提示',
     other: '其它组件',
     // 三级菜单
-    // basic
-    view: 'View 视图',
     //
     icon: 'Icon 图标',
-    // layout
-    grid: 'Grid 栅格',
-    layout: 'Layout 布局',
-    flex: 'Flex 弹性布局',
     // nav
     dropdown: 'Dropdown 下拉菜单',
     // form
