@@ -14,55 +14,55 @@ render() {
     <div>
       <Row className='m-b-10'>
         <Col span={12}>
-          <div className='demo-grid-content daze-bg-complete'>col-12</div>
+          <div className='demo-grid-content daze-bg-primary'>col-12</div>
         </Col>
         <Col span={12}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-12</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-12</div>
         </Col>
       </Row>
       <Row className='m-b-10'>
         <Col span={8}>
-            <div className='demo-grid-content daze-bg-complete'>col-8</div>
+            <div className='demo-grid-content daze-bg-primary'>col-8</div>
         </Col>
         <Col span={8}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-8</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-8</div>
         </Col>
         <Col span={8}>
-          <div className='demo-grid-content daze-bg-complete'>col-8</div>
+          <div className='demo-grid-content daze-bg-primary'>col-8</div>
         </Col>
       </Row>
       <Row className='m-b-10'>
         <Col span={6}>
-          <div className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-6</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-6</div>
         </Col>
         <Col span={6}>
-          <div className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-6</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-6</div>
         </Col>
       </Row>
       <Row className='m-b-10'>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
       </Row>
     </div>
@@ -80,16 +80,16 @@ render() {
     <div>
       <Row gutter={24}>
         <Col span={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
       </Row>
     </div>
@@ -107,23 +107,23 @@ render() {
     <div>
       <Row className='m-b-10'>
         <Col span={12} offset={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-12</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-12</div>
         </Col>
       </Row>
       <Row className='m-b-10'>
         <Col span={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
         <Col span={6} offset={12}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
       </Row>
       <Row>
         <Col span={8} offset={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-8</div>
         </Col>
         <Col span={6} offset={6}>
-          <div  className='demo-grid-content daze-bg-complete'>col-6</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-6</div>
         </Col>
       </Row>
     </div>
@@ -141,57 +141,57 @@ render() {
     <div>
       <Row className='m-b-10' type='flex' justify='start'>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' justify='center'>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' justify='end'>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' justify='space-between'>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' justify='space-around'>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete-light'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col-4</div>
         </Col>
         <Col span={4}>
-          <div  className='demo-grid-content daze-bg-complete'>col-4</div>
+          <div  className='demo-grid-content daze-bg-primary'>col-4</div>
         </Col>
       </Row>
     </div>
@@ -209,35 +209,35 @@ render() {
     <div>
       <Row className='m-b-10' type='flex' align='top'>
         <Col span={8}>
-          <div className='demo-grid-content daze-bg-complete height-50'>col-8</div>
+          <div className='demo-grid-content daze-bg-primary height-50'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete-light height-75'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary-light height-75'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete height-100'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary height-100'>col-8</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' align='middle'>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete height-100'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary height-100'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete-light height-75'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary-light height-75'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete height-50'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary height-50'>col-8</div>
         </Col>
       </Row>
       <Row className='m-b-10' type='flex' align='bottom'>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete height-50'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary height-50'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete-light height-75'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary-light height-75'>col-8</div>
         </Col>
         <Col span={8}>
-          <div  className='demo-grid-content daze-bg-complete height-100'>col-8</div>
+          <div  className='demo-grid-content daze-bg-primary height-100'>col-8</div>
         </Col>
       </Row>
     </div>
@@ -255,22 +255,22 @@ render() {
     <div>
       <Row className='m-b-10'>
         <Col xs="8" sm="6" md="4" lg="3">
-          <div className='demo-grid-content daze-bg-complete'>col</div>
+          <div className='demo-grid-content daze-bg-primary'>col</div>
         </Col>
         <Col xs="4" sm="6" md="8" lg="9">
-          <div  className='demo-grid-content daze-bg-complete-light'>col</div>
+          <div  className='demo-grid-content daze-bg-primary-light'>col</div>
         </Col>
         <Col xs="4" sm="6" md="8" lg="9">
-          <div className='demo-grid-content daze-bg-complete'>col</div>
+          <div className='demo-grid-content daze-bg-primary'>col</div>
         </Col>
         <Col xs="8" sm="6" md="4" lg="3">
-          <div className='demo-grid-content daze-bg-complete-light'>col</div>
+          <div className='demo-grid-content daze-bg-primary-light'>col</div>
         </Col>
       </Row>
       <Row>
-        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-complete'>Col</Col>
-        <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-complete-light'>Col</Col>
-        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-complete'>Col</Col>
+        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-primary'>Col</Col>
+        <Col xs={{ span: 11, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-primary-light'>Col</Col>
+        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }} className='demo-grid-content daze-bg-primary'>Col</Col>
       </Row>
     </div>
   )

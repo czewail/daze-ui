@@ -36,12 +36,12 @@
 // 亮基础色
 @color-master-light: mix(@color-master, @color-white, 16%);
 @color-master-lighter: mix(@color-master, @color-white, 9.5%);
-@color-master-lightest: mix(@color-master, @color-white, 3%);
+@color-master-lightest: mix(@color-master, @color-white, 3.5%);
 
 // 暗基础色
 @color-master-dark: mix(@color-master, @color-black, 45%);
 @color-master-darker: mix(@color-master, @color-black, 27%);
-@color-master-darkest: mix(@color-master, @color-black, 18%);
+@color-master-darkest: mix(@color-master, @color-black, 17%);
 
 // 彩色
 @color-success: #10cfbd;
@@ -166,34 +166,62 @@
 @ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 @ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
 
-// 栅格系统
-@grid-columns           : 24;
-@grid-gutter-width      : 0;
-
 // MARK: 组件
 
-// 表单 Form
+/********* Grid 栅格 ***********/
+
+// Grid 组件栅格总列数
+@grid-columns           : 24;
+// Grid 组件栅格默认间隔
+@grid-gutter-width      : 0;
+
+/********* Form 表单 ***********/
+
 @input-border-color: fade(@color-black, 10%);
 
-// 布局 Layout
+/********* Layout 布局 ***********/
+
+/** Layout 组件背景颜色 */
 @layout-background: #f2f2f2;
+/** Layout.Header 组件高度 */
 @layout-header-height: 70px;
+/** Layout.Header 组件 padding 属性的大小 */
 @layout-header-padding: 0 50px;
+/** Layout.Header 组件背景颜色 */
 @layout-header-background: @color-info-darker;
+/** Layout.Footer 组件背景颜色 */
 @layout-footer-background: #f2f2f2;
+/** Layout.Footer 组件 padding 属性的大小 */
 @layout-footer-padding: 25px 50px;
+/** Layout.Sider 组件背景颜色 */
 @layout-sider-background: @color-white;
 
-// 菜单 Menu
-// Light Theme
+/********* Menu 菜单 ***********/
+
+// Light Theme - Menu 组件浅色主题
+
+/** Menu 组件菜单的高度 */
 @menu-item-height: 40px;
+/** Menu 组件菜单缩起后的宽度 */
 @menu-collapsed-width: 80px;
+/** Menu 组件默认背景色 */
 @menu-background: @color-white;
+/** Menu 组件高亮颜色 */
+@menu-highlight-color: @color-complete;
+/** Menu 组件字体颜色 */
 @menu-item-color: @text-color;
+/** Menu 组件字体高亮颜色 */
 @menu-item-color-highlight: @color-complete;
+/** Menu 组件 active 后背景颜色 */
 @menu-item-active-background: @color-complete-light;
-// Dark Theme
+
+// Dark Theme - Menu 组件深色主题
+
+/** Menu 组件默认背景色 - 深色主题 */
 @menu-background-dark: @color-info;
+/** Menu 组件字体颜色 - 深色主题 */
 @menu-item-color-dark: @text-color-light;
+/** Menu 组件字体高亮颜色 - 深色主题 */
 @menu-item-color-highlight-dark: @color-complete-light;
+/** Menu 组件 active 后背景颜色 - 深色主题 */
 @menu-item-active-background-dark: @color-complete;

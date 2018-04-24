@@ -35,7 +35,7 @@ function checkUtil(size: number | string): string {
 
 export default class Sider extends Component<PropsType> {
   static defaultProps = {
-    width: 200,
+    width: 250,
   };
 
   render(): Node {

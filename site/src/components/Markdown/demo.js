@@ -84,7 +84,9 @@ class Demo extends React.Component {
       /* eslint prefer-spread: 0 */
       new Function(...args).apply(null, argv)
       this.source[2] = value
-    }).catch(() => {})
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   render() {

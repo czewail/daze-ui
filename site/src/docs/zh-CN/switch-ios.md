@@ -123,4 +123,4 @@ render() {
 | className      | 附加样式名                          | string   | —                                                 | —       |
 | checked        | 是否选中                            | boolean  | -                                                 | false   |
 | disabled       | 是否可用                            | boolean  | -                                                 | false   |
-| handleOnChange | 开关事件函数，参数checked为是否开启 | function | —                                                 | -       |
+| onChange | 开关事件函数，参数checked为是否开启 | function | —                                                 | -       |
