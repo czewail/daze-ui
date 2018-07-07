@@ -15,20 +15,28 @@
 import React, { Component } from 'react'
 import type { Node, Element } from 'react'
 import classNames from 'classnames'
+import Icon from '../Icon'
 import { cssPrefix } from '../../constants/config'
 
 /** @type {string} 组件样式前缀 */
 const prefix = `${cssPrefix}menu-item`
 
+/**
+ * Props
+ * @property {Element} children 子节点
+ * @property {String} className 样式名
+ * @property {Object} style 内联样式
+ */
 type PropsType = {
   children?: Element<any>,
   className?: string,
-  style?: Object
+  style?: Object,
+  icon?: Element<any> | string
 };
 
 export default class Item extends Component<PropsType> {
   render(): Node {
-    const { children, className, style, ...restProps } = this.props
+    const { children, className, style, icon, ...restProps } = this.props
     return (
       <li
         className={classNames(prefix, className)}
@@ -37,7 +45,22 @@ export default class Item extends Component<PropsType> {
         }}
         {...restProps}
       >
-        {children}
+        <span className={`${prefix}-title`}>
+          {
+            icon ?
+            (
+              <span className={`${prefix}-title-icon`}>
+                {
+                  Object.prototype.toString.call(icon) === '[object String]' ?
+                    <Icon name={icon} /> :
+                    icon
+                }
+              </span>
+            ) :
+            null
+          }
+          {children}
+        </span>
       </li>
     )
   }

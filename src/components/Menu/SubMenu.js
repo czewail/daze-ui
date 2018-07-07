@@ -18,6 +18,7 @@ import { spring, Motion } from 'react-motion'
 import { cssPrefix } from '../../constants/config'
 import Icon from '../Icon'
 import { MenuContext } from './context'
+import CollapseTransition from '../../lib/CollapseTransition'
 // import warning from '../../utils/warning'
 
 /** @type {string} 组件样式前缀 */
@@ -38,7 +39,8 @@ type PropsType = {
   style?: Object,
   title?: string | number | Element<any>,
   noArrow: boolean,
-  index: number | string
+  index: number | string,
+  icon?: Element<any> | string
 };
 
 /**
@@ -81,46 +83,53 @@ function toggleArrow(isOpened: boolean): Element<any> {
  * 根据 isOpened 参数返回带动画的子菜单
  * @param {*} isOpened 是否打开
  */
-function toggleChildren(isOpened: boolean, children?: Element<any>): Element<any> {
-  return (
-    <Motion
-      style={{
-        scaleY: spring(isOpened ? 1 : 0),
-        opacity: spring(isOpened ? 1 : 0),
-      }}
-    >
-      {
-        ({ scaleY, opacity }: Object): Element<any> => {
-          return (
-            <ul
-              className={`${cssPrefix}menu`}
-              style={{
-                transform: `scaleY(${scaleY})`,
-                transformOrigin: '50% 0 0',
-                opacity,
-              }}
-            >
-              {children}
-            </ul>
-          )
-        }
-      }
-    </Motion>
-  )
-}
+// function toggleChildren(isOpened: boolean, children?: Element<any>): Element<any> {
+//   return (
+//     <Motion
+//       style={{
+//         scaleY: spring(isOpened ? 1 : 0),
+//         opacity: spring(isOpened ? 1 : 0),
+//       }}
+//     >
+//       {
+//         ({ scaleY, opacity }: Object): Element<any> => {
+//           return (
+//             <ul
+//               className={classNames(`${cssPrefix}menu`, {
+//                 [`${prefix}-open`]: isOpened,
+//               })}
+//               style={{
+//                 transform: `scaleY(${scaleY})`,
+//                 transformOrigin: '50% 0 0',
+//                 opacity,
+//               }}
+//             >
+//               {children}
+//             </ul>
+//           )
+//         }
+//       }
+//     </Motion>
+//   )
+// }
 
 export default class SubMenu extends Component<PropsType> {
   static defaultProps = {
     noArrow: false,
   };
 
+  childrenBoxRef: any
+
   // constructor(props: PropsType) {
   //   super(props)
-  //   this.state = {}
   // }
 
   render(): Node {
-    const { children, className, style, index, title, noArrow, ...restProps } = this.props
+    const {
+      children, className, style,
+      index, title, noArrow, icon,
+      ...restProps
+    } = this.props
     return (
       <MenuContext.Consumer>
         {(menuProps: Object): Node => {
@@ -135,18 +144,38 @@ export default class SubMenu extends Component<PropsType> {
               }}
               {...restProps}
             >
-              <div
+              <span
                 className={`${prefix}-title`}
-                onClick={(e: SyntheticEvent<HTMLDivElement>) => {
+                onClick={(e: SyntheticEvent<HTMLSpanElement>) => {
                   menuProps.handleSubMenuClick(e, index)
                 }}
               >
+                {
+                  icon ?
+                  (
+                    <span className={`${prefix}-title-icon`}>
+                      {
+                        Object.prototype.toString.call(icon) === '[object String]' ?
+                          <Icon name={icon} /> :
+                          icon
+                      }
+                    </span>
+                  ) :
+                  null
+                }
                 {title}
                 {
                   noArrow || toggleArrow(isOpened)
                 }
-              </div>
-              {toggleChildren(isOpened, children)}
+              </span>
+              {/* {toggleChildren(isOpened, children)} */}
+              <CollapseTransition show={isOpened}>
+                <ul
+                  className={classNames(`${cssPrefix}menu`)}
+                >
+                  {children}
+                </ul>
+              </CollapseTransition>
             </li>
           )
         }}

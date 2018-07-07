@@ -31,6 +31,7 @@ const prefix = `${cssPrefix}menu`
  * @property {Object} style 内联样式
  * @property {Array} defaultOpenKeys 默认展开的节点 key 的集合
  * @property {Array} openKeys 展开的节点 key 的集合, 受控属性
+ * @property {Boolean} collapsed 菜单缩起/展开
  */
 type PropsType = {
   children?: Element<any>,
@@ -39,7 +40,8 @@ type PropsType = {
   className?: string,
   style?: Object,
   defaultOpenKeys?: Array<string | number>,
-  openKeys?: Array<string | number>
+  openKeys?: Array<string | number>,
+  collapsed: boolean
 };
 
 /**
@@ -54,6 +56,7 @@ export default class Menu extends Component<PropsType, StateType> {
   static defaultProps = {
     theme: 'light',
     mode: 'vertical',
+    collapsed: false,
   };
 
   static SubMenu = SubMenu
@@ -114,7 +117,7 @@ export default class Menu extends Component<PropsType, StateType> {
    * @param {event} e SyntheticEvent
    * @param {string|number} key 子菜单对应的 key
    */
-  handleSubMenuClick(e: SyntheticEvent<HTMLDivElement>, key: string | number): ?void {
+  handleSubMenuClick(e: SyntheticEvent<HTMLSpanElement>, key: string | number): ?void {
     e.preventDefault()
     const isOpened = !!~this.state.openedKeys.indexOf(key)
     if (isOpened) {
@@ -127,7 +130,7 @@ export default class Menu extends Component<PropsType, StateType> {
   render(): Node {
     const {
       children, mode, theme, defaultOpenKeys,
-      openKeys, className, style,
+      openKeys, className, style, collapsed,
       ...restProps
     } = this.props
     return (

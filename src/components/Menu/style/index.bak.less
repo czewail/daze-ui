@@ -1,0 +1,56 @@
+@import "../../../styles/index";
+
+.@{prefix}menu {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .clearfix;
+
+  &-item {
+    cursor: pointer;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    height: @menu-item-height;
+    line-height: @menu-item-height;
+    font-size: @font-size-base;
+    user-select:none;
+    &:hover {
+      color: @menu-highlight-color;
+    }
+  }
+  
+  &-submenu {
+    transition: border-color .3s @ease-in-out, background .3s @ease-in-out, padding .15s @ease-in-out;
+    padding-left: 20px;
+    &-title {
+      cursor: pointer;
+      padding-right: 35px;
+      margin: 0;
+      position: relative;
+      display: block;
+      white-space: nowrap;
+      height: @menu-item-height;
+      line-height: @menu-item-height;
+      font-size: @font-size-base;
+      user-select:none;
+      &-arrow {
+        position: absolute;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        margin-top: -8px;
+        right: 15px;
+        font-size: 14px;
+      }
+    }
+    &-title:hover {
+      color: @menu-highlight-color;
+    }
+  }
+}
