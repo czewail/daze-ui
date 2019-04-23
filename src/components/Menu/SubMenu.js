@@ -19,6 +19,7 @@ import { cssPrefix } from '../../constants/config'
 import Icon from '../Icon'
 import { MenuContext } from './context'
 import CollapseTransition from '../../lib/CollapseTransition'
+import Collapse from '../../lib/Collapse'
 // import warning from '../../utils/warning'
 
 /** @type {string} 组件样式前缀 */

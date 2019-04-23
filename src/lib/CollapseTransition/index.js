@@ -12,10 +12,21 @@ type PropsType = {
   children?: Element<any>
 };
 
-export default class CollapseTransition extends Component<PropsType> {
+type StateType = {
+  prevPropsShow: boolean
+};
+
+export default class CollapseTransition extends Component<PropsType, StateType> {
   refCache: any;
   enterTimer: any;
   leaveTimer: any;
+
+  // constructor(props: PropsType) {
+  //   super(props)
+  //   this.state = {
+  //     prevPropsShow: props.show,
+  //   }
+  // }
 
   componentDidMount(): ?void {
     this.beforeEnter()
@@ -23,6 +34,10 @@ export default class CollapseTransition extends Component<PropsType> {
       this.enter()
     }
   }
+
+  // static getDerivedStateFromProps(nextProps: any, prevState) {
+  //   if (prevState.prevPropsShow !== nextProps.show) this.triggerChange(nextProps.show)
+  // }
 
   componentWillReceiveProps(nextProps: any): ?void {
     if (this.props.show !== nextProps.show) this.triggerChange(nextProps.show)
