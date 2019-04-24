@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Copyright (c) 2018-present, Chan Zewail
  *
@@ -13,7 +11,6 @@
  */
 
 import React from 'react'
-import type { Node, Element } from 'react'
 import classNames from 'classnames'
 import { cssPrefix } from '../../constants/config'
 import Icon from '../Icon'
@@ -21,27 +18,7 @@ import ButtonGroup from './Group'
 
 const prefix = `${cssPrefix}btn`
 
-type PropsType = {
-  className?: ?string,
-  type: 'primary' | 'success' | 'complete' | 'warning' | 'danger' | 'info' | 'default',
-  basic: boolean,
-  loading: boolean,
-  size: 'large' | 'default' | 'small' | 'tiny',
-  disabled: boolean,
-  htmlType: 'button' | 'submit' | 'reset',
-  icon?: ?string,
-  iconRight: boolean,
-  rounded: boolean,
-  circle: boolean,
-  block: boolean,
-  children: Element<any>
-};
-
-type StateType = {
-  loadingStatus: boolean
-};
-
-function getSizeClassName(size?: ?string): string {
+function getSizeClassName(size) {
   switch (size) {
     case 'large':
       return `${prefix}-lg`
@@ -54,7 +31,7 @@ function getSizeClassName(size?: ?string): string {
   }
 }
 
-function getIconSize(size: ?string): number {
+function getIconSize(size) {
   switch (size) {
     case 'large':
       return 23
@@ -67,7 +44,7 @@ function getIconSize(size: ?string): number {
   }
 }
 
-export default class Button extends React.Component<PropsType, StateType> {
+export default class Button extends React.Component {
   static defaultProps = {
     type: 'default',
     basic: false,
@@ -83,20 +60,20 @@ export default class Button extends React.Component<PropsType, StateType> {
 
   static Group = ButtonGroup
 
-  constructor(props: PropsType) {
+  constructor(props) {
     super(props)
     this.state = {
       loadingStatus: props.loading,
     }
   }
 
-  componentWillReceiveProps(nextProps: PropsType) {
+  componentWillReceiveProps(nextProps) {
     this.setState({
       loadingStatus: nextProps.loading,
     })
   }
 
-  render(): Node {
+  render() {
     const {
       className, type, disabled, iconRight, rounded,
       circle, size, basic, block, loading,
@@ -104,9 +81,9 @@ export default class Button extends React.Component<PropsType, StateType> {
       ...otherProps
     } = this.props
     const { loadingStatus } = this.state
-    const sizeClassName: string = getSizeClassName(size)
-    const iconSize: number = getIconSize(size)
-    const classNamesString: ?string = classNames(prefix, {
+    const sizeClassName = getSizeClassName(size)
+    const iconSize = getIconSize(size)
+    const classNamesString = classNames(prefix, {
       [`${sizeClassName}`]: sizeClassName,
       [`${prefix}-basic`]: basic,
       [`${prefix}-${type || 'default'}`]: true,

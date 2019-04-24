@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Copyright (c) 2018-present, Chan Zewail
  *
@@ -13,13 +11,12 @@
  */
 
 import React, { Component } from 'react'
-import type { Node, Element } from 'react'
 import classNames from 'classnames'
 import { cssPrefix } from '../../constants/config'
 
 const prefix = `${cssPrefix}btn-group`
 
-function getSizeClassName(size: string): string {
+function getSizeClassName(size) {
   switch (size) {
     case 'large':
       return `${prefix}-lg`
@@ -32,17 +29,11 @@ function getSizeClassName(size: string): string {
   }
 }
 
-type PropsType = {
-  children?: Element<any>,
-  size: 'large' | 'default' | 'small' | 'tiny',
-  className?: string
-};
-
-export default class ButtonGroup extends Component<PropsType> {
+export default class ButtonGroup extends Component {
   static defaultProps = {
     size: 'default',
   }
-  render(): Node {
+  render() {
     const { className, size, ...restProps } = this.props
     const sizeCls = getSizeClassName(size)
     const buttonGroupClassNames = classNames(prefix, {
